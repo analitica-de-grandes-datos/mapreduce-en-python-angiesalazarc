@@ -8,7 +8,7 @@ if __name__ == "__main__":
   t = 0
 
   for line in sys.stdin:
-    key, value = line.split("\t")
+    key, val = line.split("\t")
     val = int(val)
 
     if key == curkey:
