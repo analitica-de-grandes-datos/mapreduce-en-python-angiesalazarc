@@ -5,6 +5,6 @@ import sys
 
 if __name__ == "__main__":
     for line in sys.stdin:
-      column = line.split(",")[2]
+      column = line.strip().split(",")[2]
       
       sys.stdout.write("{}\t1\n".format(column))
