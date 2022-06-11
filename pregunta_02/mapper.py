@@ -8,4 +8,4 @@ if __name__ == "__main__":
      purpose = line.split(",")[3]
      amount = line.split(",")[4]
      
-     sys.stdout.write("{}\t1\n".format(purpose, amount))
+     sys.stdout.write("{}\t{}\n".format(purpose, amount))
