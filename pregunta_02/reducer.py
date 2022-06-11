@@ -12,9 +12,7 @@ if __name__ == "__main__":
     val = int(val)
 
     if key == curkey:
-      if max > val:
-        max = total
-      else:
+      if val > max:
         max = val
 
     else:
