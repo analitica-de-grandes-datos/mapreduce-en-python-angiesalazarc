@@ -12,13 +12,15 @@ if __name__ == "__main__":
     val = int(val)
 
     if key == curkey:
-      if val > max:
-        max = val
+      if total > val:
+        total = total
+      else:
+        total = val
 
     else:
       if curkey is not None:
         sys.stdout.write("{}\t{}\n".format(curkey, t))
       curkey = key
-      max = val
+      total = val
 
   sys.stdout.write("{}\t{}\n".format(curkey, t))
