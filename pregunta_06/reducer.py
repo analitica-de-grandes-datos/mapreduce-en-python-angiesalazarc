@@ -6,6 +6,7 @@ import sys
 if __name__ == "__main__":
     curkey = None
     max = 0
+    val = 0
 
     for line in sys.stdin:
         key, val = line.split("\t")
