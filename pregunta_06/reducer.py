@@ -3,26 +3,31 @@
 #
 import sys
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+
     curkey = None
-    max = 0
-    val = 0
+    vmax  = 0
 
     for line in sys.stdin:
+
         key, val = line.split("\t")
         val = float(val)
 
         if key == curkey:
-            if val > max:
-                max = val
-            if val < min:
-                min = val
+
+            if val > vmax:
+                vmax = val
+            if val < vmin:
+                vmin = val
 
         else:
-            if curkey is not None:
-                sys.stdout.write("{}\t{}\t{}\n".format(curkey, max, min))
-            curkey = key
-            max = val
-            min = val
 
-        sys.stdout.write("{}\t{}\t{}\n".format(curkey, max, min))
+            if curkey is not None:
+
+                sys.stdout.write("{}\t{}\t{}\n".format(curkey, vmax, vmin))
+
+            curkey = key
+            vmax = val
+            vmin = val
+
+    sys.stdout.write("{}\t{}\t{}\n".format(curkey, vmax, vmin))
