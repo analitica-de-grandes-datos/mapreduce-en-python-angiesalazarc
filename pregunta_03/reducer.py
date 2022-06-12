@@ -4,17 +4,10 @@
 import sys
 
 if __name__ == "__main__":
-    curkey = None
-    value = 0
 
     for line in sys.stdin:
-        key, val = line.split("\t")
-
-        if curkey is not None:
-            sys.stdout.write("{},{}\n".format(value.replace("\n",""),curkey))
-        curkey = key
-        value = val
-    
-    sys.stdout.write("{},{}".format(value.replace("\n",""),curkey))
+        lista = line.split(",")
+        
+        sys.stdout.write("{},{}\n".format(lista[1].strip(),lista[0]))
 
         
