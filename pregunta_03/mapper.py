@@ -9,4 +9,4 @@ if __name__ == "__main__":
         value = line.split(",")[1]
         value = int(value)
 
-        sys.stdout.write("{}\t{}\n".format(letter,value))
+        sys.stdout.write("{}\{}\n".format(letter,value))
