@@ -22,4 +22,4 @@ if __name__ == "__main__":
             curkey = key
             t = value
 
-        sys.stdout.write("{}\t{}\t{}\n".format(curkey, t, t/count))  
+        sys.stdout.write("{}\t{}\t{}\n".format(curkey, t, t))
