@@ -3,25 +3,26 @@
 #
 import sys
 
-if __name__ == "__main__":
-    vector = []
-
-    for line in sys.stdin:
-        letter, value = line.split("\t")
-        value = int(value)
-        vector.append((letter, value))
-
-    vector.sort(key=lambda orden: (orden[0], orden[1]))
+if __name__ == '__main__':
 
     curkey = None
+    total = 0
 
-    for line in vector:
-        if curkey == line[0]:
-            sys.stdout.write(",{}".format(line[1]))
+    for line in sys.stdin:
+
+        key, val = line.split("\t")
+        val = val.strip()
+
+        if key == curkey:
+
+            numeros = numeros + ',' + str(int(val))
         else:
+
             if curkey is not None:
-                sys.stdout.write("\n{}\t{}".format(line[0], line[1]))
-                curkey = line[0]
-            else:
-                sys.stdout.write("{}\t{}".format(line[0], line[1]))
-                curkey = line[0]
+            
+                sys.stdout.write("{}\t{}\n".format(curkey, numeros))
+
+            curkey = key
+            numeros = str(int(val))
+
+    sys.stdout.write("{}\t{}\n".format(curkey, numeros))
