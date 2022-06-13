@@ -7,6 +7,7 @@ if __name__ == "__main__":
 
     curkey = None
     count = 0
+    suma = 0
 
     for line in sys.stdin:
 
@@ -14,12 +15,13 @@ if __name__ == "__main__":
         value = int(value)
 
         if key == curkey:
-            t = t + value
+            suma = suma + value
             count = count + 1
         else:
             if curkey is not None:
-                sys.stdout.write("{}\t{}\t{}\n".format(curkey, t, t/count))
+                sys.stdout.write("{}\t{}\t{}\n".format(curkey, suma, suma/count))
             curkey = key
-            t = value
+            suma = value
+            count = 1
 
-        sys.stdout.write("{}\t{}\t{}\n".format(curkey, t, t))
+        sys.stdout.write("{}\t{}\t{}\n".format(curkey, suma, suma/count))
