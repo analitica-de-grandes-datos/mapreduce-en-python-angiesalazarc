@@ -12,7 +12,7 @@ if __name__ == "__main__":
     for line in sys.stdin:
 
         key, value = line.split("\t")
-        value = int(value)
+        value = float(value)
 
         if key == curkey:
             suma = suma + value
