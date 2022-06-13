@@ -4,13 +4,18 @@
 import sys
 
 if __name__ == "__main__":
-    contador = 0
+    vector = []
 
     for line in sys.stdin:
-        lista = line.split('   ')
+        letter, date, value = line.split("\t")
+        value = int(value)
+        vector.append((letter, date, value))
+    vector.sort(key=lambda orden: (orden[2]))
 
-        sys.stdout.write("{}   {}   {}\n".format(lista[1], lista[2].strip(), int(lista[0])))
-        
-        if contador >= 5:
-            break
-        contador += 1
+    c=1
+    limit=7
+
+    for line in vector:
+        if c < limit:
+            sys.stdout.write("{}   {}   {}\n".format(line[0], line[1].strip(), line[2]))
+            c = c + 1
