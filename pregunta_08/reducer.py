@@ -3,25 +3,30 @@
 #
 import sys
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
     curkey = None
-    count = 0
     suma = 0
+    cont = 0
 
     for line in sys.stdin:
 
-        key, value = line.split("\t")
-        value = float(value)
+        key, val = line.split("\t")
+        val = float(val)
 
         if key == curkey:
-            suma = suma + value
-            count = count + 1
-        else:
-            if curkey is not None:
-                sys.stdout.write("{}\t{}\t{}\n".format(curkey, suma, suma/count))
-            curkey = key
-            suma = value
-            count = 1
 
-        sys.stdout.write("{}\t{}\t{}\n".format(curkey, suma, suma/count))
+            suma = suma + val
+            cont = cont + 1
+
+        else:
+
+            if curkey is not None:
+
+                sys.stdout.write("{}\t{}\t{}\n".format(curkey, suma, suma/cont))
+
+            curkey = key
+            suma = val
+            cont = 1
+
+    sys.stdout.write("{}\t{}\t{}\n".format(curkey, suma, suma/cont))
